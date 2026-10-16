@@ -49,7 +49,7 @@
       <div class="overflow-hidden rounded-xl border border-line bg-card">
         <div class="flex items-center justify-between border-b border-line bg-soft px-4 py-2">
           <span class="font-mono text-xs text-muted">profile.json</span>
-          <span class="flex gap-1.5" aria-hidden="true"><span class="h-2.5 w-2.5 rounded-full bg-line"></span><span class="h-2.5 w-2.5 rounded-full bg-line"></span><span class="h-2.5 w-2.5 rounded-full bg-line"></span></span>
+          <span class="flex gap-1.5" aria-hidden="true"><span class="h-2.5 w-2.5 rounded-full bg-[#FF5F57]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#28C840]"></span></span>
         </div>
         <pre class="overflow-x-auto whitespace-pre-wrap break-words p-4 font-mono text-[12.5px] leading-relaxed text-ink">{\n${lines}\n}</pre>
       </div>`;
@@ -59,17 +59,20 @@
     $("#hero").innerHTML = `
       <div class="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_380px]">
         <div class="min-w-0">
-          <div class="flex items-center gap-4">
-            <img src="${esc(P.photo)}" alt="Portrait of ${esc(P.name)}" width="88" height="88" class="h-20 w-20 rounded-2xl border border-line object-cover object-top md:h-24 md:w-24">
-            <div>
+          <div class="flex items-center gap-5 sm:gap-7">
+            <img src="${esc(P.photo)}" alt="Portrait of ${esc(P.name)}" width="208" height="208" class="h-28 w-28 shrink-0 rounded-3xl border border-line object-cover object-top shadow-[0_8px_24px_rgba(9,9,11,0.10)] sm:h-44 sm:w-44 lg:h-52 lg:w-52">
+            <div class="min-w-0">
               <p class="inline-flex items-center gap-2 rounded-full border border-line bg-card px-3 py-1 text-xs font-medium text-ink2">
                 <span class="h-2 w-2 rounded-full bg-up" aria-hidden="true"></span>Open to new roles
               </p>
-              <p class="mt-2 flex items-center gap-1.5 text-sm text-muted">${icon("map-pin", "h-4 w-4")} ${esc(P.location)} · ${esc(P.relocation)}</p>
+              <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">${esc(P.name)}</h1>
+              <p class="mt-2 flex items-start gap-1.5 text-sm text-muted">${icon("map-pin", "mt-0.5 h-4 w-4 shrink-0")} <span>${esc(P.location)} · ${esc(P.relocation)}</span></p>
+              <ul class="mt-4 hidden flex-wrap gap-2 sm:flex" aria-label="Roles">
+                ${P.roles.map((r) => `<li class="rounded-md border border-accent/30 bg-accent-soft px-2.5 py-1 font-mono text-xs font-medium text-accent-ink">${esc(r)}</li>`).join("")}
+              </ul>
             </div>
           </div>
-          <h1 class="mt-8 text-5xl font-bold tracking-tight md:text-6xl">${esc(P.name)}</h1>
-          <ul class="mt-5 flex flex-wrap gap-2" aria-label="Roles">
+          <ul class="mt-5 flex flex-wrap gap-2 sm:hidden" aria-label="Roles">
             ${P.roles.map((r) => `<li class="rounded-md border border-accent/30 bg-accent-soft px-2.5 py-1 font-mono text-xs font-medium text-accent-ink">${esc(r)}</li>`).join("")}
           </ul>
           <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink2">${esc(P.summary)}</p>
