@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vishal Raj</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Vishal Raj — Analytics Manager, Data Scientist and ML Engineer in payments and fintech.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+<link rel="stylesheet" href="assets/styles.css">
+<script src="assets/vendor/lucide.min.js"></script>
+</head>
+<body>
+
+<div class="min-h-screen">
+  <!-- ===== Header ===== -->
+  <header class="sticky-top sticky z-50 border-b border-line bg-bg/90 backdrop-blur">
+    <div class="gutter mx-auto flex max-w-page items-center gap-4 py-3">
+      <a href="#top" class="font-mono text-sm font-semibold tracking-tight text-ink">vishal<span class="text-accent">.</span>raj</a>
+      <nav aria-label="Sections" class="no-scrollbar ml-auto hidden gap-1 overflow-x-auto md:flex" id="nav"></nav>
+      <a href="#" data-resume class="ml-auto inline-flex min-h-[40px] cursor-pointer items-center gap-2 rounded-lg bg-ink px-3.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-ink2 md:ml-2">
+        <i data-lucide="download" class="h-4 w-4" aria-hidden="true"></i><span>Resume <span class="hidden sm:inline">(PDF)</span></span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Each section below is filled by app.js from profile.js -->
+    <section id="hero" class="gutter mx-auto max-w-page py-12 md:py-16"></section>
+    <section id="roles" class="border-t border-line"></section>
+    <section id="impact" class="border-t border-line"></section>
+    <section id="work" class="border-t border-line"></section>
+    <section id="experience" class="border-t border-line"></section>
+    <section id="skills" class="border-t border-line"></section>
+    <section id="building" class="border-t border-line"></section>
+    <section id="contact" class="border-t border-line"></section>
+  </main>
+
+  <footer class="border-t border-line">
+    <div class="gutter mx-auto flex max-w-page flex-wrap items-center justify-between gap-2 py-6 font-mono text-xs text-muted">
+      <span>© 2026 Vishal Raj</span><span>Built with Tailwind CSS + Lucide</span>
+    </div>
+  </footer>
+
+  <div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-5 left-1/2 z-50 -translate-x-1/2 rounded-lg bg-ink px-4 py-2 text-sm text-white opacity-0 transition-opacity duration-200"></div>
+</div>
+
+<script src="profile.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
