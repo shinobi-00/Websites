@@ -9,7 +9,6 @@ window.PROFILE = {
   summary:
     "8+ years turning payments, lending and product data into decisions, and more recently into AI products. I frame the problem, set the success metric and the guardrails, build the model myself, and ship it where people use it: Qwery, Phoenix, ARES.",
   location: "Bangalore, India",
-  relocation: "Open to roles in the UK",
   yearsExperience: 8,
   photo: "assets/vishal-raj.jpg",
   resume: { file: "assets/Vishal_Raj_Resume.pdf", filename: "Vishal_Raj_Resume.pdf" },
@@ -42,7 +41,7 @@ window.PROFILE = {
     { metric: "Monthly transacting users", org: "Razorpay", before: "62,000", after: "78,000", change: "+24%" },
     { metric: "Loan application funnel conversion", org: "Zet", before: "4%", after: "7%", change: "+75%" },
     { metric: "Visit-to-sign-up conversion", org: "Airtel", before: "40%", after: "79%", change: "+39 pts" },
-    { metric: "Monthly net revenue, agent programme", org: "Zet", before: "—", after: "£120k", change: "~4,000 agents" },
+    { metric: "Monthly net revenue, agent programme", org: "Zet", before: "—", after: "US$156k", change: "~4,000 agents" },
   ],
 
   // One card per target role, each backed by CV evidence
@@ -74,7 +73,7 @@ window.PROFILE = {
       title: "Models and experiments tied to revenue",
       points: [
         "Re-engineered supervised credit-risk models with bureau-data features: loan funnel conversion 4% → 7%.",
-        "Built a supervised merchant-referral model: 300 new sign-ups and £20k MRR a month.",
+        "Built a supervised merchant-referral model: 300 new sign-ups and US$26k MRR a month.",
         "Designed A/B tests across cohorts and channels; WhatsApp lifted high-value sign-ups 12% → 20%.",
         "Root-cause analysis behind a 3% → 1.4% payment rejection rate.",
       ],
@@ -124,18 +123,18 @@ window.PROFILE = {
     { id: "CREDIT", org: "Zet", year: "2023", tag: "Credit-risk ML", title: "Credit-risk model rebuild",
       body: "New bureau-data features and refined credit-line recommendations, enabling 50,000+ disbursals in 12 months with NBFC partners.", result: "4% → 7% funnel conversion" },
     { id: "REFERRAL", org: "Razorpay", year: "2025", tag: "Supervised ML", title: "Merchant referral model",
-      body: "A supervised model, with LLM tooling, reads merchant website behaviour to surface cross-sell referrals.", result: "+£20k MRR", detail: "300 sign-ups / month" },
+      body: "A supervised model, with LLM tooling, reads merchant website behaviour to surface cross-sell referrals.", result: "+US$26k MRR", detail: "300 sign-ups / month" },
   ],
 
   experience: [
     { when: "Apr 2026 – Present", title: "Analytics Manager", org: "Aspire", meta: "Singapore (Remote) · Payments & Fintech",
       points: ["Built ARES, an LLM text-to-SQL assistant: −80% ad hoc requests, US$5k/month saved.", "Phoenix failed-payment recovery model: ≈US$274k GP protected a year (replayed), 82.5% precision, zero compliance breaches.", "LightGBM churn model (ROC-AUC 0.93, 4.4× lift) and a Churn Watchlist: 107 Tier-1 accounts holding US$302k GP.", "Cut cross-border payment delays from 12% to 8% in one quarter.", "Lowered payment rejections from 3% to 1.4%.", "Lead a six-person analytics team, working remotely from Bangalore."] },
     { when: "Nov 2024 – Apr 2026", title: "Senior Analytics Specialist", org: "Razorpay", meta: "Bangalore · Payments Infrastructure",
-      points: ["LLM ticket-routing agent: P90 resolution 5 → 2 days, NPS 52 → 64.", "Grew monthly transacting users 62k → 78k (+24%).", "Supervised referral model: 300 sign-ups and £20k MRR a month.", "Automated Tableau and Slack scorecards: delivery 2–5 → 1–3 days."] },
+      points: ["LLM ticket-routing agent: P90 resolution 5 → 2 days, NPS 52 → 64.", "Grew monthly transacting users 62k → 78k (+24%).", "Supervised referral model: 300 sign-ups and US$26k MRR a month.", "Automated Tableau and Slack scorecards: delivery 2–5 → 1–3 days."] },
     { when: "May 2024 – Nov 2024", title: "Senior Manager, Analytics", org: "Airtel", meta: "Gurugram · Telecoms & EdTech",
       points: ["Led six analysts and two data engineers building ETL and reporting for the CEO's office.", "Real-time error monitoring with automated Jira tickets via Python.", "Funnel instrumentation lifted visit-to-sign-up 40% → 79%."] },
     { when: "Nov 2022 – Apr 2024", title: "Data Analyst", org: "Zet", meta: "Bangalore · Fintech Lending",
-      points: ["Credit-risk model rebuild: loan funnel conversion 4% → 7%.", "50,000+ loan disbursals in 12 months via NBFC pre-approvals.", "Agent loyalty programme: +£120k/month net revenue."] },
+      points: ["Credit-risk model rebuild: loan funnel conversion 4% → 7%.", "50,000+ loan disbursals in 12 months via NBFC pre-approvals.", "Agent loyalty programme: +US$156k/month net revenue."] },
     { when: "Apr 2022 – Nov 2022", title: "Data Analyst", org: "Relevel by Unacademy", meta: "Bangalore · EdTech",
       points: ["Self-serve dashboards cut ad hoc requests by 40% in one sprint."] },
     { when: "May 2021 – Mar 2022", title: "Business Analyst", org: "Newton School", meta: "Bangalore · EdTech",

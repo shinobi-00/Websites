@@ -38,7 +38,7 @@
       experience_years: P.yearsExperience,
       built: ["Qwery", "Phoenix", "ARES", "churn model"],
       languages: Object.fromEntries(P.languages.map((l) => [l.name, l.level])),
-      location: `${P.location} → open to UK`,
+      location: P.location,
     };
     const fmt = (v) => typeof v === "number" ? `<span class="text-amber-700">${v}</span>`
       : Array.isArray(v) ? `[${v.map(fmt).join(", ")}]`
@@ -66,7 +66,7 @@
                 <span class="h-2 w-2 rounded-full bg-up" aria-hidden="true"></span>Open to new roles
               </p>
               <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">${esc(P.name)}</h1>
-              <p class="mt-2 flex items-start gap-1.5 text-sm text-muted">${icon("map-pin", "mt-0.5 h-4 w-4 shrink-0")} <span>${esc(P.location)} · ${esc(P.relocation)}</span></p>
+              <p class="mt-2 flex items-start gap-1.5 text-sm text-muted">${icon("map-pin", "mt-0.5 h-4 w-4 shrink-0")} <span>${esc(P.location)}</span></p>
               <ul class="mt-4 hidden flex-wrap gap-2 sm:flex" aria-label="Roles">
                 ${P.roles.map((r) => `<li class="rounded-md border border-accent/30 bg-accent-soft px-2.5 py-1 font-mono text-xs font-medium text-accent-ink">${esc(r)}</li>`).join("")}
               </ul>
@@ -198,7 +198,7 @@
     $("#contact").innerHTML = shell("contact", "Hiring for AI product, analytics or data science?", "",
       `<div class="grid gap-8 md:grid-cols-2">
         <div>
-          <p class="max-w-md text-lg text-ink2">I'm looking for AI Product Manager and senior analytics or data science roles, especially in fintech and payments in the UK.</p>
+          <p class="max-w-md text-lg text-ink2">I'm looking for AI Product Manager and senior analytics or data science roles, especially in fintech and payments.</p>
           <a href="#" data-resume class="mt-6 inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-lg bg-accent px-5 text-sm font-medium text-white transition-colors duration-200 hover:bg-accent-ink">${icon("file-down")} Download resume (PDF)</a>
         </div>
         <div class="rounded-xl border border-line bg-card px-5">
@@ -206,7 +206,7 @@
             `<button type="button" data-copy="email" class="inline-flex min-h-[36px] cursor-pointer items-center gap-1.5 rounded-md border border-line px-3 text-xs font-medium transition-colors duration-200 hover:border-ink2">${icon("copy", "h-3.5 w-3.5")}<span>Copy</span></button>`)}
           ${row("LinkedIn", `<a class="font-mono text-sm text-accent underline-offset-4 hover:underline" href="${esc(P.contact.linkedin)}" target="_blank" rel="noopener">${esc(P.contact.linkedinLabel)}</a>`)}
           ${row("GitHub", `<a class="font-mono text-sm text-accent underline-offset-4 hover:underline" href="${esc(P.contact.github)}" target="_blank" rel="noopener">${esc(P.contact.githubLabel)}</a>`)}
-          ${row("Location", `<span class="text-sm">${esc(P.location)} · ${esc(P.relocation)}</span>`)}
+          ${row("Location", `<span class="text-sm">${esc(P.location)}</span>`)}
           ${row("Languages", `<span class="text-sm">${P.languages.map((l) => `${esc(l.name)} (${esc(l.level)})`).join(" · ")}</span>`)}
         </div>
       </div>`);
