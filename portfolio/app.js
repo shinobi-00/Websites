@@ -36,7 +36,7 @@
       roles: P.roles,
       domain: ["payments", "fintech", "lending"],
       experience_years: P.yearsExperience,
-      shipped: ["LLM text-to-SQL", "LLM ticket routing", "credit-risk ML"],
+      built: ["Qwery", "Phoenix", "ARES", "churn model"],
       languages: Object.fromEntries(P.languages.map((l) => [l.name, l.level])),
       location: `${P.location} → open to UK`,
     };
@@ -80,10 +80,11 @@
             <a href="#" data-resume class="inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-lg bg-accent px-5 text-sm font-medium text-white transition-colors duration-200 hover:bg-accent-ink">${icon("file-down")} Download resume (PDF)</a>
             <a href="#contact" class="inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-lg border border-line bg-card px-5 text-sm font-medium text-ink transition-colors duration-200 hover:border-ink2">${icon("mail")} Contact</a>
             <a href="${esc(P.contact.linkedin)}" target="_blank" rel="noopener" class="inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-lg border border-line bg-card px-5 text-sm font-medium text-ink transition-colors duration-200 hover:border-ink2">${icon("linkedin")} LinkedIn</a>
+            <a href="${esc(P.contact.github)}" target="_blank" rel="noopener" class="inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-lg border border-line bg-card px-5 text-sm font-medium text-ink transition-colors duration-200 hover:border-ink2">${icon("github")} GitHub</a>
           </div>
           <dl class="mt-10 grid max-w-xl grid-cols-3 gap-4 border-t border-line pt-6">
             <div><dt class="font-mono text-xs uppercase tracking-wider text-muted">Experience</dt><dd class="num mt-1 text-2xl font-semibold">${P.yearsExperience}+ yrs</dd></div>
-            <div><dt class="font-mono text-xs uppercase tracking-wider text-muted">LLM systems</dt><dd class="num mt-1 text-2xl font-semibold">2 in prod</dd></div>
+            <div><dt class="font-mono text-xs uppercase tracking-wider text-muted">AI products</dt><dd class="num mt-1 text-2xl font-semibold">4 built</dd></div>
             <div><dt class="font-mono text-xs uppercase tracking-wider text-muted">Largest team</dt><dd class="num mt-1 text-2xl font-semibold">8 people</dd></div>
           </dl>
         </div>
@@ -107,7 +108,7 @@
         </div>
       </article>`).join("");
     $("#roles").innerHTML = shell("roles", "What I bring to each", "The same eight years, read through each job description.",
-      `<div class="grid gap-5 lg:grid-cols-3">${cards}</div>`);
+      `<div class="grid gap-5 md:grid-cols-2">${cards}</div>`);
   }
 
   function renderImpact() {
@@ -140,6 +141,7 @@
         ${c.flow ? `<ol class="flex flex-wrap items-center gap-2 font-mono text-xs" aria-label="Pipeline">${c.flow.map((s, i) => `<li class="flex items-center gap-2">${i ? icon("arrow-right", "h-3.5 w-3.5 text-muted") : ""}<span class="rounded-md border border-line bg-soft px-2 py-1">${esc(s)}</span></li>`).join("")}</ol>` : ""}
         <p class="mt-auto pt-2 text-2xl font-semibold tracking-tight text-up">${esc(c.result)}</p>
         ${c.detail ? `<p class="font-mono text-xs text-muted">${esc(c.detail)}</p>` : ""}
+        ${c.link ? `<a href="${esc(c.link.href)}" target="_blank" rel="noopener" class="inline-flex w-fit cursor-pointer items-center gap-1.5 font-mono text-sm font-medium text-accent-ink underline decoration-accent/40 underline-offset-4 transition-colors duration-200 hover:text-accent">${esc(c.link.label)}${icon("arrow-up-right", "h-4 w-4")}</a>` : ""}
       </article>`;
     $("#work").innerHTML = shell("selected work", "Case files", "Problem, what I built, and what changed.",
       `<div class="grid gap-5 md:grid-cols-2">${P.cases.map(card).join("")}</div>`);
@@ -193,16 +195,17 @@
       <div class="flex flex-wrap items-center gap-3 border-t border-line py-4 first:border-t-0">
         <span class="w-24 font-mono text-xs uppercase tracking-wider text-muted">${label}</span>
         <span class="min-w-0 flex-1 break-words">${value}</span>${extra}</div>`;
-    $("#contact").innerHTML = shell("contact", "Hiring for analytics, data science or ML?", "",
+    $("#contact").innerHTML = shell("contact", "Hiring for AI product, analytics or data science?", "",
       `<div class="grid gap-8 md:grid-cols-2">
         <div>
-          <p class="max-w-md text-lg text-ink2">I'm looking for senior analytics, data science and ML engineering roles, especially in fintech and payments in the UK.</p>
+          <p class="max-w-md text-lg text-ink2">I'm looking for AI Product Manager and senior analytics or data science roles, especially in fintech and payments in the UK.</p>
           <a href="#" data-resume class="mt-6 inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-lg bg-accent px-5 text-sm font-medium text-white transition-colors duration-200 hover:bg-accent-ink">${icon("file-down")} Download resume (PDF)</a>
         </div>
         <div class="rounded-xl border border-line bg-card px-5">
           ${row("Email", `<span id="email" class="select-all font-mono text-sm">${esc(P.contact.email)}</span>`,
             `<button type="button" data-copy="email" class="inline-flex min-h-[36px] cursor-pointer items-center gap-1.5 rounded-md border border-line px-3 text-xs font-medium transition-colors duration-200 hover:border-ink2">${icon("copy", "h-3.5 w-3.5")}<span>Copy</span></button>`)}
           ${row("LinkedIn", `<a class="font-mono text-sm text-accent underline-offset-4 hover:underline" href="${esc(P.contact.linkedin)}" target="_blank" rel="noopener">${esc(P.contact.linkedinLabel)}</a>`)}
+          ${row("GitHub", `<a class="font-mono text-sm text-accent underline-offset-4 hover:underline" href="${esc(P.contact.github)}" target="_blank" rel="noopener">${esc(P.contact.githubLabel)}</a>`)}
           ${row("Location", `<span class="text-sm">${esc(P.location)} · ${esc(P.relocation)}</span>`)}
           ${row("Languages", `<span class="text-sm">${P.languages.map((l) => `${esc(l.name)} (${esc(l.level)})`).join(" · ")}</span>`)}
         </div>

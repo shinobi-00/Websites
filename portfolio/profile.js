@@ -4,10 +4,10 @@
 // =============================================================
 window.PROFILE = {
   name: "Vishal Raj",
-  headline: "Analytics Manager · Data Scientist · ML Engineer",
-  roles: ["Analytics Manager", "Data Scientist", "ML Engineer"],
+  headline: "AI Product Manager · Analytics Manager · Data Scientist",
+  roles: ["AI Product Manager", "Analytics Manager", "Data Scientist", "ML Engineer"],
   summary:
-    "8+ years turning payments, lending and product data into decisions, and more recently into production ML and LLM systems. I lead analytics teams, build the models myself, and ship them where people use them.",
+    "8+ years turning payments, lending and product data into decisions, and more recently into AI products. I frame the problem, set the success metric and the guardrails, build the model myself, and ship it where people use it: Qwery, Phoenix, ARES.",
   location: "Bangalore, India",
   relocation: "Open to roles in the UK",
   yearsExperience: 8,
@@ -17,6 +17,8 @@ window.PROFILE = {
     email: "00vishalraj99@gmail.com",
     linkedin: "https://www.linkedin.com/in/vishalraj13",
     linkedinLabel: "linkedin.com/in/vishalraj13",
+    github: "https://github.com/shinobi-00",
+    githubLabel: "github.com/shinobi-00",
   },
   languages: [
     { name: "English", level: "Professional" },
@@ -33,6 +35,8 @@ window.PROFILE = {
     { metric: "Cross-border payment delay rate", org: "Aspire", before: "12%", after: "8%", change: "−4 pts in 1 quarter" },
     { metric: "Payment rejection rate", org: "Aspire", before: "3.0%", after: "1.4%", change: "−53%" },
     { metric: "Ad hoc data requests to the team", org: "Aspire", before: "—", after: "−80%", change: "US$5k/mo saved" },
+    { metric: "Gross profit protected a year (Phoenix, replayed)", org: "Aspire", before: "$0", after: "US$274k", change: "82.5% precision" },
+    { metric: "Annual gross profit at risk surfaced (churn model)", org: "Aspire", before: "—", after: "US$384k", change: "ROC-AUC 0.93" },
     { metric: "P90 support resolution time", org: "Razorpay", before: "5 days", after: "2 days", change: "−60%" },
     { metric: "Net promoter score", org: "Razorpay", before: "52", after: "64", change: "+12 pts" },
     { metric: "Monthly transacting users", org: "Razorpay", before: "62,000", after: "78,000", change: "+24%" },
@@ -43,6 +47,17 @@ window.PROFILE = {
 
   // One card per target role, each backed by CV evidence
   roleEvidence: [
+    {
+      role: "AI Product Manager", icon: "sparkles",
+      title: "Ships AI products people can trust",
+      points: [
+        "Designed, built and launched Qwery (qwery.co.in), a natural-language analytics product: scope, plans, pricing tiers and the eight accuracy guards behind every answer.",
+        "Framed Phoenix around one question per failed payment, made compliance a hard veto, and proved it in shadow mode before any customer was contacted.",
+        "Chose operating points by unit economics, not default metrics: skipped a 95%-recall threshold that would add 3,747 wasted calls a month.",
+        "Cut ad hoc data requests 80% with ARES, an LLM assistant, saving US$5k a month.",
+      ],
+      stack: ["Product discovery", "Success metrics", "AI guardrails", "Pricing & packaging", "Shadow-mode pilots"],
+    },
     {
       role: "Analytics Manager", icon: "users",
       title: "Leads teams that ship decisions fast",
@@ -80,7 +95,23 @@ window.PROFILE = {
 
   cases: [
     {
-      id: "ARES", org: "Aspire", year: "2026", tag: "LLM · Text-to-SQL", featured: true,
+      id: "QWERY", org: "Own product", year: "2026", tag: "AI product · SaaS", featured: true,
+      title: "Qwery: ask your data anything",
+      body: "Business teams queue simple data questions with analysts, and a wrong number from an LLM is worse than no answer. Qwery turns a plain-English question into read-only Databricks SQL, charts and written insights, behind eight automated accuracy guards. Economy, Balanced and Max model tiers with per-user budgets keep spend predictable, and an MCP server lets Claude query each curated data room.",
+      flow: ["Question", "LLM writes SQL", "8 guards, read-only run", "Chart + insight"],
+      result: "8 accuracy guards", detail: "Individual and Company plans, free trial", link: { href: "https://qwery.co.in", label: "qwery.co.in" },
+    },
+    { id: "PHOENIX", org: "Aspire", year: "2026", tag: "ML decisioning · Payments", title: "Phoenix: failed payments, rescued",
+      body: "About 1,355 payments fail every month and 61% are never re-sent; customers who are not recovered are 3× as likely to leave. An hour after each failure Phoenix scores the risk and picks an account-manager call, a one-tap fix message or a retry. Compliance holds a veto, so screening rejections are never contacted. Run in shadow mode on live failures.",
+      result: "≈US$274k GP protected a year", detail: "Replayed on 10,236 real failures · 82.5% precision on unseen months · 0 compliance breaches · ~US$16/month to run" },
+    { id: "CHURN", org: "Aspire", year: "2026", tag: "ML · Churn", title: "Churn model, tested like a product",
+      body: "A 15-feature LightGBM model predicts which businesses go silent within 90 days. Evaluated on a window it never saw during training, feature selection or thresholding: calibration, drift, fairness across ten slices and SHAP sense-checks. I set the operating point for value, not recall.",
+      result: "ROC-AUC 0.93 · 4.4× lift", detail: "Out-of-time Jan–May 2026, 85,783 rows · four-fifths fairness rule passed on all 10 slices" },
+    { id: "WATCHLIST", org: "Aspire", year: "2026", tag: "Internal tool · Churn", title: "Churn Watchlist for account managers",
+      body: "A ranked list of every active business with a 0–100% churn probability, filters by product, geography and owner, CSV export, and a win-back list of accounts already silent for 90+ days. Tier 1 points account managers at accounts worth a call.",
+      result: "107 Tier-1 accounts, US$302k GP", detail: "17,961 active businesses · 4,147 High or Critical · US$384k annual GP at risk" },
+    {
+      id: "ARES", org: "Aspire", year: "2026", tag: "LLM · Text-to-SQL",
       title: "ARES: an LLM analytics assistant",
       body: "Teams across six markets queued simple data questions with analysts, and a paid assistant cost US$5,000 a month. ARES takes a plain-English question, writes SQL against the warehouse, runs it and returns the result with a chart.",
       flow: ["Question", "LLM writes SQL", "Warehouse", "Result + chart"],
@@ -98,7 +129,7 @@ window.PROFILE = {
 
   experience: [
     { when: "Apr 2026 – Present", title: "Analytics Manager", org: "Aspire", meta: "Singapore (Remote) · Payments & Fintech",
-      points: ["Built ARES, an LLM text-to-SQL assistant: −80% ad hoc requests, US$5k/month saved.", "Cut cross-border payment delays from 12% to 8% in one quarter.", "Lowered payment rejections from 3% to 1.4%.", "Lead a six-person analytics team, working remotely from Bangalore."] },
+      points: ["Built ARES, an LLM text-to-SQL assistant: −80% ad hoc requests, US$5k/month saved.", "Phoenix failed-payment recovery model: ≈US$274k GP protected a year (replayed), 82.5% precision, zero compliance breaches.", "LightGBM churn model (ROC-AUC 0.93, 4.4× lift) and a Churn Watchlist: 107 Tier-1 accounts holding US$302k GP.", "Cut cross-border payment delays from 12% to 8% in one quarter.", "Lowered payment rejections from 3% to 1.4%.", "Lead a six-person analytics team, working remotely from Bangalore."] },
     { when: "Nov 2024 – Apr 2026", title: "Senior Analytics Specialist", org: "Razorpay", meta: "Bangalore · Payments Infrastructure",
       points: ["LLM ticket-routing agent: P90 resolution 5 → 2 days, NPS 52 → 64.", "Grew monthly transacting users 62k → 78k (+24%).", "Supervised referral model: 300 sign-ups and £20k MRR a month.", "Automated Tableau and Slack scorecards: delivery 2–5 → 1–3 days."] },
     { when: "May 2024 – Nov 2024", title: "Senior Manager, Analytics", org: "Airtel", meta: "Gurugram · Telecoms & EdTech",
@@ -117,8 +148,9 @@ window.PROFILE = {
 
   // `core: true` = used in production
   skills: [
-    { group: "ML & AI", icon: "brain", items: [["LLM applications", 1], ["Prompt engineering", 1], ["Supervised learning", 1], ["NLP & text classification", 1], ["Credit-risk modelling", 1], ["Feature engineering", 0], ["scikit-learn", 0]] },
-    { group: "Data engineering", icon: "database", items: [["SQL", 1], ["Python", 1], ["Airflow", 1], ["Databricks", 1], ["dbt", 0], ["pandas", 0], ["NumPy", 0], ["AWS (S3, Lambda, Glue, EC2, RDS)", 0], ["PostgreSQL", 0], ["BigQuery", 0], ["Trino", 0], ["Git", 0]] },
+    { group: "AI product", icon: "sparkles", items: [["Product discovery", 1], ["Success metrics & KPIs", 1], ["Human-in-the-loop design", 1], ["AI guardrails & compliance", 1], ["Pricing & packaging", 0], ["Go-to-market", 0], ["Roadmapping & prioritisation", 0], ["Shadow-mode pilots", 0], ["Unit economics", 0]] },
+    { group: "ML & AI", icon: "brain", items: [["LLM applications", 1], ["Text-to-SQL", 1], ["Prompt engineering", 1], ["MCP (Model Context Protocol)", 1], ["Supervised learning", 1], ["LightGBM & SHAP", 1], ["Model monitoring & fairness testing", 0], ["NLP & text classification", 1], ["Credit-risk modelling", 1], ["Feature engineering", 0], ["scikit-learn", 0]] },
+    { group: "Data engineering", icon: "database", items: [["SQL", 1], ["Python", 1], ["Airflow", 1], ["Databricks", 1], ["FastAPI", 1], ["Next.js", 0], ["Docker", 0], ["dbt", 0], ["pandas", 0], ["NumPy", 0], ["AWS (S3, Lambda, Glue, EC2, RDS)", 0], ["PostgreSQL", 0], ["BigQuery", 0], ["Trino", 0], ["Git", 0]] },
     { group: "Analytics & experimentation", icon: "chart-line", items: [["A/B testing", 1], ["Cohort analysis", 1], ["Funnel analytics", 1], ["Statistical modelling", 0], ["Forecasting", 0], ["Root-cause analysis", 0]] },
     { group: "BI & product analytics", icon: "layout-dashboard", items: [["Tableau", 1], ["Power BI", 0], ["Looker Studio", 0], ["Metabase", 0], ["Mixpanel", 0], ["Amplitude", 0], ["Google Analytics", 0]] },
     { group: "Domain", icon: "landmark", items: [["Cross-border payments", 1], ["FX", 1], ["Lending", 0], ["Payments infrastructure", 0], ["EdTech", 0], ["Telecoms", 0]] },
